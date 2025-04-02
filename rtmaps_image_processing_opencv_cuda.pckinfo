@@ -1,0 +1,4 @@
+﻿# Package information for rtmaps_image_processing_opencv.pck
+VERSION=1.3.3
+DATE=20250313
+DESCRIPTION=Wrappers to some OpenCV image processing functions with CUDA in option.

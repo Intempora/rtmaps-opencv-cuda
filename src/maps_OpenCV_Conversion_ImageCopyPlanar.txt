@@ -1,0 +1,61 @@
+		// The following conversion code works but building it against
+		// the OpenCV 4 ext_private_api produces link conflicts with api_rtmaps_image_formats
+		// because of libpng. I might be solved by rebuilding OpenCV without png support.
+		// We would need to make sure we don't need this support in the package.
+		// This function as a whole is not used in the package, 
+		// so for now we just comment the code out.
+
+		// cv::Mat does not support planar images so we convert it
+		/*
+		if (image->height <= 0)
+		{
+			throw std::domain_error("Image height <= 0. Cannot convert IplImage to cv::Mat");
+		}
+		if (image->width <= 0)
+		{
+			throw std::domain_error("Image width <= 0. Cannot convert IplImage to cv::Mat");
+		}
+
+		MAPSColorSpaceConverter	converter;
+		IplImageCSCSource source(*image);
+
+		int type;
+		switch (static_cast<unsigned int>(image->depth))
+		{
+		case IPL_DEPTH_8U:
+			type = CV_8UC(image->nChannels);
+			break;
+		case IPL_DEPTH_8S:
+			type = CV_8SC(image->nChannels);
+			break;
+		case IPL_DEPTH_16U:
+			type = CV_16UC(image->nChannels);
+			break;
+		case IPL_DEPTH_16S:
+			type = CV_16SC(image->nChannels);
+			break;
+		case IPL_DEPTH_32S:
+			type = CV_32SC(image->nChannels);
+			break;
+		case IPL_DEPTH_32F:
+			type = CV_32FC(image->nChannels);
+			break;
+		case IPL_DEPTH_1U:
+		default:
+		{
+			MAPSStreamedString s;
+			s << "Image depth [" << image->depth << "] unknown.";
+			throw std::domain_error(s.Beginning());
+		}
+		}
+
+		cv::Mat outMat(cv::Size(image->width, image->height), type);
+
+		IplImage outIpl = MAPS::IplImageModel(image->width, image->height, image->channelSeq, IPL_DATA_ORDER_PIXEL, image->depth, 1);
+		outIpl.imageData = reinterpret_cast<char*>(outMat.data);
+		outIpl.roi = image->roi; // We point to the same ROI.
+
+		IplImageCSCTarget target(outIpl, false);
+		converter.convert(source, target);
+		return outMat;
+		*/

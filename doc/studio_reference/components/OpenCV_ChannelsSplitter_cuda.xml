@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentResources xmlns="http://schemas.intempora.com/RTMaps/2011/ComponentResources" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="OpenCV_ChannelsSplitter_cuda" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/ComponentResources http://www.intempora.com/schemas/RTMaps/2011/ComponentResources.xsd">
+<Type>Component</Type>
+<IconFile>opencv.png</IconFile>
+<TargetOS>OS-independent</TargetOS>
+<Lang lang="ENG">
+<GroupName>Image processing</GroupName>
+<Documentation>
+<Component>
+<Alias>Channels Splitter</Alias>
+<Description><![CDATA[
+Divides a 3-channel image into several 
+single-channel GRAY images.]]></Description>
+</Component>
+<Property MAPSName="use_cuda">
+<Alias>Use CUDA</Alias>
+<Description><![CDATA[This property is available when a CUDA device is discovered. Enable it in order to use CUDA version of the algorithm.]]></Description>
+</Property>
+<Property MAPSName="gpu_mat_as_input">
+<Alias>GpuMat as input</Alias>
+<Description><![CDATA[This property is available when "Use CUDA" is enabled. Enable it in order to use CUDA memory (GpuMat for opencv) as input.]]></Description>
+</Property>
+<Property MAPSName="gpu_mat_as_output">
+<Alias>GpuMat as output</Alias>
+<Description><![CDATA[This property is available when "Use CUDA" is enabled. Enable it in order to use CUDA memory (GpuMat for opencv) as output.]]></Description>
+</Property>
+<Output MAPSName="channel1">
+<Alias>output_channel1</Alias>
+<Description/>
+</Output>
+<Output MAPSName="channel2">
+<Alias>output_channel2</Alias>
+<Description/>
+</Output>
+<Output MAPSName="channel3">
+<Alias>output_channel3</Alias>
+<Description/>
+</Output>
+<Output MAPSName="o_gpu_mat_channel1">
+<Alias>gpu_output_channel1</Alias>
+<Description><![CDATA[This output appears when "GpuMat as output" is enabled.]]></Description>
+</Output>
+<Output MAPSName="o_gpu_mat_channel2">
+<Alias>gpu_output_channel2</Alias>
+<Description><![CDATA[This output appears when "GpuMat as output" is enabled.]]></Description>
+</Output>
+<Output MAPSName="o_gpu_mat_channel3">
+<Alias>gpu_output_channel3</Alias>
+<Description><![CDATA[This output appears when "GpuMat as output" is enabled.]]></Description>
+</Output>
+<Input MAPSName="imageIn">
+<Alias>imageIn</Alias>
+<Description/>
+</Input>
+<Input MAPSName="i_gpu_mat">
+<Alias>gpu_input</Alias>
+<Description><![CDATA[This input appears when "GpuMat as input" is enabled.]]></Description>
+</Input>
+</Documentation>
+</Lang>
+</ComponentResources>
