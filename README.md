@@ -1,6 +1,6 @@
 # Introduction
 
-This repository contains a RTMaps package that use OpenCV with CUDA in order to do GPU processing on images. This package is inspired by this RTMaps [repo](https://github.com/Intempora/rtmaps-cuda-examples) explaining how to use GPU-accelerated computing with RTMaps components.
+This repository contains a RTMaps package that uses OpenCV with CUDA in order to perform GPU processing on images. This package is inspired by this RTMaps [repo](https://github.com/Intempora/rtmaps-cuda-examples) explaining how to use GPU-accelerated computing with RTMaps components.
 
 More specifically, this sample illustrates exchanging CUDA objects on the inputs and outputs of RTMaps components without having to transfer them to main memory. It is a minimal version of the following example:
 ![Processing pipeline](images/diagram.png)
